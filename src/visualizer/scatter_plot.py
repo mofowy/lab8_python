@@ -1,5 +1,6 @@
 import matplotlib.pyplot as plt
 from .base import Visualizer
+from ..exporter import Exporter
 
 class ScatterPlot(Visualizer):
     def __init__(self, data, x_col, y_col):
@@ -11,4 +12,5 @@ class ScatterPlot(Visualizer):
         plt.scatter(self.data[self.x_col], self.data[self.y_col])
         plt.xlabel(self.x_col)
         plt.ylabel(self.y_col)
+        Exporter.export_plot(f'output/{self.x_col}_vs_{self.y_col}_scatter_plot.png')
         self.show()

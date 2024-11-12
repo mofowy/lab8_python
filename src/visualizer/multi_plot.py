@@ -1,5 +1,6 @@
 import matplotlib.pyplot as plt
 from .base import Visualizer
+from ..exporter import Exporter
 
 class MultiPlotVisualizer(Visualizer):
     def __init__(self, data):
@@ -15,4 +16,5 @@ class MultiPlotVisualizer(Visualizer):
             ax.set_xlabel(x_col)
             ax.set_ylabel(y_col)
         plt.tight_layout()
+        Exporter.export_plot('output/MixedPlot.png')
         self.show()

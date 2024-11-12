@@ -11,3 +11,4 @@ class Exporter:
         plt.savefig(filename, format="png")
         print(f"Plot saved to {filename}")
         plt.show()
+        plt.close()
